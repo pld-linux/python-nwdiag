@@ -1,3 +1,9 @@
+# TODO
+# - unpackaged files:
+#   /usr/share/python2.7/site-packages/nwdiag_sphinxhelper.pyc
+#   /usr/share/python2.7/site-packages/nwdiag_sphinxhelper.pyo
+#   /usr/share/python2.7/site-packages/sphinxcontrib_nwdiag.pyc
+#   /usr/share/python2.7/site-packages/sphinxcontrib_nwdiag.pyo
 %define 	module nwdiag
 Summary:	nwdiag generate network-diagram image file from spec-text file
 Name:		python-%{module}
@@ -8,8 +14,6 @@ Group:		Development/Languages
 URL:		http://blockdiag.com/en/%{module}/index.html
 Source0:	http://pypi.python.org/packages/source/n/%{module}/%{module}-%{version}.tar.gz
 # Source0-md5:	affeeca174b6b68a7fca416d6831f1af
-#BuildRequires:	python < 3.0
-BuildRequires:	python-funcparserlib >= 0.3.4
 BuildRequires:	rpmbuild(macros) >= 1.219
 BuildRequires:	sed >= 4.0
 Requires:	python-blockdiag >= 0.8.3
@@ -37,6 +41,8 @@ rm -rf $RPM_BUILD_ROOT
 	--optimize=2 \
 	--skip-build \
 	--root $RPM_BUILD_ROOT
+
+%py_postclean
 
 %clean
 rm -rf $RPM_BUILD_ROOT
