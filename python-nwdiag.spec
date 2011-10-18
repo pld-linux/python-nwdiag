@@ -1,14 +1,8 @@
-# TODO
-# - unpackaged files:
-#   /usr/share/python2.7/site-packages/nwdiag_sphinxhelper.pyc
-#   /usr/share/python2.7/site-packages/nwdiag_sphinxhelper.pyo
-#   /usr/share/python2.7/site-packages/sphinxcontrib_nwdiag.pyc
-#   /usr/share/python2.7/site-packages/sphinxcontrib_nwdiag.pyo
 %define 	module nwdiag
 Summary:	nwdiag generate network-diagram image file from spec-text file
 Name:		python-%{module}
 Version:	0.5.0
-Release:	0.1
+Release:	1
 License:	Apache v2.0
 Group:		Development/Languages
 URL:		http://blockdiag.com/en/%{module}/index.html
@@ -51,6 +45,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/%{module}
 %{py_sitescriptdir}/%{module}
+%{py_sitescriptdir}/%{module}_sphinxhelper.py[co]
+%{py_sitescriptdir}/sphinxcontrib_%{module}.py[co]
 %if "%{py_ver}" > "2.4"
 %{py_sitescriptdir}/%{module}-%{version}-*.egg-info
 %endif
