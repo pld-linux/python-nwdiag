@@ -1,16 +1,16 @@
 %define 	module nwdiag
 Summary:	nwdiag generate network-diagram image file from spec-text file
 Name:		python-%{module}
-Version:	0.5.0
+Version:	0.7.0
 Release:	1
 License:	Apache v2.0
 Group:		Development/Languages
 URL:		http://blockdiag.com/en/%{module}/index.html
 Source0:	http://pypi.python.org/packages/source/n/%{module}/%{module}-%{version}.tar.gz
-# Source0-md5:	affeeca174b6b68a7fca416d6831f1af
+# Source0-md5:	be27a6238a5275cc2bbe376fd1c2b6e9
 BuildRequires:	rpmbuild(macros) >= 1.219
 BuildRequires:	sed >= 4.0
-Requires:	python-blockdiag >= 0.8.3
+Requires:	python-blockdiag >= 1.1.0
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -38,7 +38,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__rm} -r $RPM_BUILD_ROOT%{py_sitescriptdir}/%{module}/tests
 %{__rm} $RPM_BUILD_ROOT%{py_sitescriptdir}/%{module}_sphinxhelper.py[co]
-%{__rm} $RPM_BUILD_ROOT%{py_sitescriptdir}/sphinxcontrib_%{module}.py[co]
+%{__rm} $RPM_BUILD_ROOT%{py_sitescriptdir}/rackdiag_sphinxhelper.py[co]
 
 install -d $RPM_BUILD_ROOT%{_mandir}/man1
 cp -p %{module}.1 $RPM_BUILD_ROOT%{_mandir}/man1
@@ -51,8 +51,10 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/%{module}
+%attr(755,root,root) %{_bindir}/rackdiag
 %{_mandir}/man1/%{module}.1*
 %{py_sitescriptdir}/%{module}
+%{py_sitescriptdir}/rackdiag
 %if "%{py_ver}" > "2.4"
 %{py_sitescriptdir}/%{module}-%{version}-*.egg-info
 %endif
