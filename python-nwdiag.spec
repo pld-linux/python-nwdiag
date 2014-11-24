@@ -5,9 +5,9 @@ Version:	0.7.0
 Release:	1
 License:	Apache v2.0
 Group:		Development/Languages
-URL:		http://blockdiag.com/en/%{module}/index.html
 Source0:	http://pypi.python.org/packages/source/n/%{module}/%{module}-%{version}.tar.gz
 # Source0-md5:	be27a6238a5275cc2bbe376fd1c2b6e9
+URL:		http://blockdiag.com/en/nwdiag/
 BuildRequires:	rpmbuild(macros) >= 1.219
 BuildRequires:	sed >= 4.0
 Requires:	python-blockdiag >= 1.1.0
