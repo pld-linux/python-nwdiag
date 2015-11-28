@@ -2,7 +2,7 @@
 Summary:	nwdiag generate network-diagram image file from spec-text file
 Name:		python-%{module}
 Version:	0.7.0
-Release:	1
+Release:	2
 License:	Apache v2.0
 Group:		Development/Languages
 Source0:	http://pypi.python.org/packages/source/n/%{module}/%{module}-%{version}.tar.gz
